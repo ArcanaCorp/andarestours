@@ -1,0 +1,208 @@
+:root {
+    /* =========================================================
+       SPACING
+    ========================================================= */
+    --space-0: 0;
+
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 12px;
+    --space-lg: 16px;
+    --space-xl: 24px;
+
+    --space-2xl: 32px;
+    --space-3xl: 48px;
+    --space-4xl: 64px;
+    --space-5xl: 80px;
+
+    /* =========================================================
+       RADIUS
+    ========================================================= */
+    --radius-none: 0;
+
+    --radius-sm: 0.5rem;
+    --radius-md: 1rem;
+    --radius-lg: 1.5rem;
+    --radius-xl: 2rem;
+    --radius-2xl: 3rem;
+
+    --radius-full: 9999px;
+
+    /* =========================================================
+       COLORS
+    ========================================================= */
+
+    /* PRIMARY */
+    --color-primary: #000f49;
+    --color-primary-container: #001f7a;
+    --color-primary-fixed: #dde1ff;
+    --color-primary-fixed-dim: #b8c3ff;
+    --color-on-primary: #ffffff;
+
+    /* SECONDARY */
+    --color-secondary: #5000e0;
+    --color-secondary-container: #6933fe;
+    --color-secondary-fixed: #e7deff;
+    --color-secondary-fixed-dim: #cbbeff;
+    --color-on-secondary: #ffffff;
+
+    /* TERTIARY */
+    --color-tertiary: #001a1b;
+    --color-tertiary-container: #003032;
+    --color-tertiary-fixed: #73f6fb;
+    --color-tertiary-fixed-dim: #52d9de;
+    --color-on-tertiary: #ffffff;
+
+    /* SURFACE */
+    --color-background: #f8f9fd;
+
+    --color-surface: #f8f9fd;
+    --color-surface-low: #f2f3f7;
+    --color-surface-container: #edeef2;
+    --color-surface-high: #e7e8ec;
+    --color-surface-highest: #e1e2e6;
+
+    /* TEXT */
+    --color-on-surface: #191c1f;
+    --color-on-surface-variant: #454652;
+
+    /* OUTLINE */
+    --color-outline: #757683;
+    --color-outline-variant: #c5c5d4;
+
+    /* STATES */
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+
+    --color-success: #00a2a6;
+    --color-on-success: #ffffff;
+
+    --color-warning: #ffb020;
+    --color-on-warning: #191c1f;
+
+    --color-info: #2563eb;
+    --color-on-info: #ffffff;
+
+    /* GRADIENTS */
+    --gradient-primary: linear-gradient(135deg, #000f49 0%, #5000e0 100%);
+
+    /* =========================================================
+       TYPOGRAPHY
+    ========================================================= */
+
+    /* FONT FAMILY */
+    --font-family-sans: var(--font-heading-sans);
+    --font-family-mono: var(--font-body-sans);
+
+    /* FONT SIZE */
+    --font-size-xs: 0.75rem;   /* 12px */
+    --font-size-sm: 0.875rem;  /* 14px */
+    --font-size-md: 1rem;      /* 16px */
+    --font-size-lg: 1.125rem;  /* 18px */
+    --font-size-xl: 1.25rem;   /* 20px */
+
+    --font-size-2xl: 1.5rem;   /* 24px */
+    --font-size-3xl: 2rem;     /* 32px */
+    --font-size-4xl: 2.5rem;   /* 40px */
+    --font-size-5xl: 3rem;     /* 48px */
+    --font-size-6xl: 4rem;     /* 64px */
+
+    /* FONT WEIGHT */
+    --font-weight-thin: 100;
+    --font-weight-extra-light: 200;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semi-bold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extra-bold: 800;
+    --font-weight-black: 900;
+
+    /* LINE HEIGHT */
+    --line-height-tight: 1.1;
+    --line-height-snug: 1.25;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.7;
+    --line-height-loose: 2;
+
+    /* LETTER SPACING */
+    --letter-spacing-tight: -0.03em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.03em;
+
+    /* =========================================================
+       ELEVATION
+    ========================================================= */
+
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 8px 24px rgba(0, 15, 73, 0.08);
+    --shadow-lg: 0 20px 60px rgba(0, 15, 73, 0.15);
+    --shadow-xl: 0 32px 80px rgba(0, 15, 73, 0.2);
+    --shadow-glow: 0 0 32px rgba(80, 0, 224, 0.25);
+    --glass-blur: blur(20px);
+
+    /* =========================================================
+       MOTION
+    ========================================================= */
+
+    /* EASING */
+    --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* DURATION */
+    --duration-fast: 120ms;
+    --duration-normal: 220ms;
+    --duration-slow: 420ms;
+
+    /* =========================================================
+       LAYOUT
+    ========================================================= */
+
+    --container-xs: 480px;
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1440px;
+
+    /* =========================================================
+       Z-INDEX
+    ========================================================= */
+
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal-backdrop: 400;
+    --z-modal: 500;
+    --z-popover: 600;
+    --z-tooltip: 700;
+    --z-toast: 800;
+
+    /* =========================================================
+       BORDER
+    ========================================================= */
+
+    --border-width-none: 0;
+    --border-width-thin: 1px;
+    --border-width-medium: 2px;
+    --border-width-thick: 4px;
+
+    /* =========================================================
+       OPACITY
+    ========================================================= */
+
+    --opacity-disabled: 0.38;
+    --opacity-muted: 0.6;
+    --opacity-overlay: 0.8;
+
+    /* =========================================================
+       TRANSITIONS
+    ========================================================= */
+
+    --transition-fast: all var(--duration-fast) var(--ease-standard);
+    --transition-normal: all var(--duration-normal) var(--ease-standard);
+    --transition-slow: all var(--duration-slow) var(--ease-standard);
+}

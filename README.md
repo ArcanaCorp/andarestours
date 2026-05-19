@@ -1,36 +1,150 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Andares Tours World
 
-## Getting Started
+Sitio web oficial de **Andares Tours World**, agencia de viajes y turismo especializada en:
 
-First, run the development server:
+- Tickets aéreos
+- Tours nacionales
+- Traslados turísticos
+- Hoteles
+- Alquiler de movilidades
+
+---
+
+## ✨ Tecnologías
+
+- Next.js
+- React
+- CSS Utility System
+- Design Tokens
+- Responsive Design
+- SEO Optimization
+
+---
+
+## 🚀 Instalación
+
+Clona el proyecto:
+
+```bash
+git clone https://github.com/tuusuario/andares-tours.git
+```
+
+Ingresa al proyecto:
+
+```bash
+cd andares-tours
+```
+
+Instala dependencias:
+
+```bash
+npm install
+```
+
+Inicia el servidor de desarrollo:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 📁 Estructura del proyecto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```txt
+src/
+│
+├── app/
+├── components/
+├── assets/
+│   └── css/
+│       ├── tokens/
+│       ├── utilities/
+│       ├── components/
+│       ├── reset.css
+│       └── global.css
+│
+├── public/
+└── lib/
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🎨 Design System
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+El proyecto utiliza un sistema de diseño basado en:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Tokens
 
-## Deploy on Vercel
+- Colors
+- Typography
+- Spacing
+- Radius
+- Elevation
+- Motion
+- Layout
+- Z-Index
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Utilities
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Text
+- Backgrounds
+- Flex
+- Grid
+- Spacing
+- Radius
+- Shadows
+
+---
+
+## 🌎 SEO
+
+El proyecto incluye:
+
+- Open Graph
+- Twitter Cards
+- JSON-LD
+- Canonical URLs
+- Metadata optimizada
+- SEO local para turismo
+
+---
+
+## 📱 Redes Sociales
+
+### Instagram
+@andarestoursperu
+
+### TikTok
+@andarestoursjauja
+
+### X (Twitter)
+@Andarestoursvip
+
+---
+
+## 📞 Contacto
+
+### WhatsApp
+
+- +51 928 889 884
+- +51 921 440 340
+
+### Correo
+
+andarestoursperu@gmail.com
+
+---
+
+## 🏢 Información de la empresa
+
+**ANDARES TOURS PERU**  
+Constancia N° 107-2023-GRJ-DIRCETUR
+
+---
+
+## 📄 Licencia
+
+Proyecto desarrollado para Andares Tours World.
+
+Todos los derechos reservados.

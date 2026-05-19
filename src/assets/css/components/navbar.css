@@ -1,0 +1,40 @@
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    backdrop-filter: blur(20px);
+
+    background: rgba(255,255,255,0.6);
+
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.nav-link {
+    position: relative;
+
+    color: var(--color-primary);
+
+    text-decoration: none;
+}
+
+.nav-link::after {
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--color-secondary);
+
+    transition: all 220ms ease;
+
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}

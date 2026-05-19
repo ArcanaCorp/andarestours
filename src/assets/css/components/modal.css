@@ -1,0 +1,18 @@
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.25);
+
+    backdrop-filter: blur(12px);
+}
+
+.modal {
+    background: rgba(255,255,255,0.75);
+
+    backdrop-filter: blur(20px);
+
+    border-radius: var(--radius-2xl);
+
+    box-shadow: var(--shadow-lg);
+}

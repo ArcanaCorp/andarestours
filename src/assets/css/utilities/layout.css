@@ -1,0 +1,53 @@
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.w-inherit { width: inherit; }
+.h-inherit { height: inherit; }
+.w { width: var(--w); min-width: var(--mnw); max-width: var(--mxw); }
+.h { height: var(--h); min-height: var(--mnh); max-height: var(--mxh); }
+.w-fit { width: fit-content; }
+.h-fit { height: fit-content; }
+
+@media (min-width: 768px) {
+    .md\:w-full { width: 100%; }
+    .md\:h-full { height: 100%; }
+    .md\:w-inherit { width: inherit; }
+    .md\:h-inherit { height: inherit; }
+    .md\:w { width: var(--w-md); min-width: var(--mnw-md); max-width: var(--mxw-md); }
+    .md\:h { height: var(--h-md); min-height: var(--mnh-md); max-height: var(--mxh-md); }
+}
+
+@media (min-width: 1024px) {
+    .lg\:w-full { width: 100%; }
+    .lg\:h-full { height: 100%; }
+    .lg\:w-inherit { width: inherit; }
+    .lg\:h-inherit { height: inherit; }
+    .lg\:w { width: var(--w-lg); min-width: var(--mnw-lg); max-width: var(--mxw-lg); }
+    .lg\:h { height: var(--h-lg); min-height: var(--mnh-lg); max-height: var(--mxh-lg); }
+}
+
+@media (min-width: 1440px) {
+    .xl\:w-full { width: 100%; }
+    .xl\:h-full { height: 100%; }
+    .xl\:w-inherit { width: inherit; }
+    .xl\:h-inherit { height: inherit; }
+    .xl\:w { width: var(--w-xl); min-width: var(--mnw-xl); max-width: var(--mxw-xl); }
+    .xl\:h { height: var(--h-xl); min-height: var(--mnh-xl); max-height: var(--mxh-xl); }
+}
+
+@media (min-width: 1920px) {
+    .xxl\:w-full { width: 100%; }
+    .xxl\:h-full { height: 100%; }
+    .xxl\:w-inherit { width: inherit; }
+    .xxl\:h-inherit { height: inherit; }
+    .xxl\:w { width: var(--w-xxl); min-width: var(--mnw-xxl); max-width: var(--mxw-xxl); }
+    .xxl\:h { height: var(--h-xxl); min-height: var(--mnh-xxl); max-height: var(--mxh-xxl); }
+}
+
+@media (min-width: 2560px) {
+    .xxxl\:w-full { width: 100%; }
+    .xxxl\:h-full { height: 100%; }
+    .xxxl\:w-inherit { width: inherit; }
+    .xxxl\:h-inherit { height: inherit; }
+    .xxxl\:w { width: var(--w-xxxl); min-width: var(--mnw-xxxl); max-width: var(--mxw-xxxl); }
+    .xxxl\:h { height: var(--h-xxxl); min-height: var(--mnh-xxxl); max-height: var(--mxh-xxxl); }
+}

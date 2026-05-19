@@ -1,0 +1,28 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    padding-inline: 22px;
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: var(--weight-semibold);
+    transition: all 220ms ease;
+    text-wrap: nowrap;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: var(--color-on-primary);
+}
+
+.btn:hover {
+    transform: translateY(-2);
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--color-primary);
+}

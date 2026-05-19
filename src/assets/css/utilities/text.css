@@ -1,0 +1,274 @@
+.font-sans {font-family: var(--font-family-sans);}
+.font-mono {font-family: var(--font-family-mono);}
+
+/* =========================================================
+   FONT SIZE
+========================================================= */
+
+.text-xs {font-size: var(--font-size-xs);}
+.text-sm {font-size: var(--font-size-sm);}
+.text-md {font-size: var(--font-size-md);}
+.text-lg {font-size: var(--font-size-lg);}
+.text-xl {font-size: var(--font-size-xl);}
+.text-2xl {font-size: var(--font-size-2xl);}
+.text-3xl {font-size: var(--font-size-3xl);}
+.text-4xl {font-size: var(--font-size-4xl);}
+.text-5xl {font-size: var(--font-size-5xl);}
+.text-6xl {font-size: var(--font-size-6xl);}
+
+/* =========================================================
+   FONT WEIGHT
+========================================================= */
+
+.font-thin {
+    font-weight: var(--font-weight-thin);
+}
+
+.font-extra-light {
+    font-weight: var(--font-weight-extra-light);
+}
+
+.font-light {
+    font-weight: var(--font-weight-light);
+}
+
+.font-regular {
+    font-weight: var(--font-weight-regular);
+}
+
+.font-medium {
+    font-weight: var(--font-weight-medium);
+}
+
+.font-semi-bold {
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.font-bold {
+    font-weight: var(--font-weight-bold);
+}
+
+.font-extra-bold {
+    font-weight: var(--font-weight-extra-bold);
+}
+
+.font-black {
+    font-weight: var(--font-weight-black);
+}
+
+/* =========================================================
+   LINE HEIGHT
+========================================================= */
+
+.leading-tight {
+    line-height: var(--line-height-tight);
+}
+
+.leading-snug {
+    line-height: var(--line-height-snug);
+}
+
+.leading-normal {
+    line-height: var(--line-height-normal);
+}
+
+.leading-relaxed {
+    line-height: var(--line-height-relaxed);
+}
+
+.leading-loose {
+    line-height: var(--line-height-loose);
+}
+
+/* =========================================================
+   LETTER SPACING
+========================================================= */
+
+.tracking-tight {
+    letter-spacing: var(--letter-spacing-tight);
+}
+
+.tracking-normal {
+    letter-spacing: var(--letter-spacing-normal);
+}
+
+.tracking-wide {
+    letter-spacing: var(--letter-spacing-wide);
+}
+
+/* =========================================================
+   TEXT ALIGN
+========================================================= */
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+/* =========================================================
+   TEXT TRANSFORM
+========================================================= */
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.normal-case {
+    text-transform: none;
+}
+
+/* =========================================================
+   TEXT DECORATION
+========================================================= */
+
+.underline {
+    text-decoration: underline;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+.no-underline {
+    text-decoration: none;
+}
+
+/* =========================================================
+   TEXT COLORS
+========================================================= */
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-secondary {
+    color: var(--color-secondary);
+}
+
+.text-tertiary {
+    color: var(--color-tertiary);
+}
+
+.text-surface {
+    color: var(--color-on-surface);
+}
+
+.text-muted {
+    color: var(--color-on-surface-variant);
+}
+
+.text-success {
+    color: var(--color-success);
+}
+
+.text-error {
+    color: var(--color-error);
+}
+
+.text-warning {
+    color: var(--color-warning);
+}
+
+.text-info {
+    color: var(--color-info);
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+/* =========================================================
+   TEXT OVERFLOW
+========================================================= */
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.text-wrap {
+    white-space: normal;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.break-words {
+    overflow-wrap: break-word;
+}
+
+/* =========================================================
+   FONT STYLE
+========================================================= */
+
+.italic { font-style: italic; }
+.not-italic { font-style: normal; }
+
+/* =========================================================
+   USER SELECT
+========================================================= */
+
+.select-none { user-select: none; }
+.select-text { user-select: text; }
+.select-all { user-select: all; }
+
+
+@media (min-width: 768px) {
+    .md\:text-xs {font-size: var(--font-size-xs);}
+    .md\:text-sm {font-size: var(--font-size-sm);}
+    .md\:text-md {font-size: var(--font-size-md);}
+    .md\:text-lg {font-size: var(--font-size-lg);}
+    .md\:text-xl {font-size: var(--font-size-xl);}
+    .md\:text-2xl {font-size: var(--font-size-2xl);}
+    .md\:text-3xl {font-size: var(--font-size-3xl);}
+    .md\:text-4xl {font-size: var(--font-size-4xl);}
+    .md\:text-5xl {font-size: var(--font-size-5xl);}
+    .md\:text-6xl {font-size: var(--font-size-6xl);}
+}
+
+@media (min-width: 1024px) {
+    .lg\:text-xs {font-size: var(--font-size-xs);}
+    .lg\:text-sm {font-size: var(--font-size-sm);}
+    .lg\:text-md {font-size: var(--font-size-md);}
+    .lg\:text-lg {font-size: var(--font-size-lg);}
+    .lg\:text-xl {font-size: var(--font-size-xl);}
+    .lg\:text-2xl {font-size: var(--font-size-2xl);}
+    .lg\:text-3xl {font-size: var(--font-size-3xl);}
+    .lg\:text-4xl {font-size: var(--font-size-4xl);}
+    .lg\:text-5xl {font-size: var(--font-size-5xl);}
+    .lg\:text-6xl {font-size: var(--font-size-6xl);}
+}
+
+@media (min-width: 1440px) {
+    .xl\:text-xs {font-size: var(--font-size-xs);}
+    .xl\:text-sm {font-size: var(--font-size-sm);}
+    .xl\:text-md {font-size: var(--font-size-md);}
+    .xl\:text-lg {font-size: var(--font-size-lg);}
+    .xl\:text-xl {font-size: var(--font-size-xl);}
+    .xl\:text-2xl {font-size: var(--font-size-2xl);}
+    .xl\:text-3xl {font-size: var(--font-size-3xl);}
+    .xl\:text-4xl {font-size: var(--font-size-4xl);}
+    .xl\:text-5xl {font-size: var(--font-size-5xl);}
+    .xl\:text-6xl {font-size: var(--font-size-6xl);}
+}

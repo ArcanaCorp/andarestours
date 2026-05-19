@@ -1,0 +1,229 @@
+/* =========================================================
+   BACKGROUND UTILITIES
+   utilities/colors.css
+========================================================= */
+
+/* =========================================================
+   PRIMARY
+========================================================= */
+
+.bg-primary {
+    background: var(--color-primary);
+    color: var(--color-on-primary);
+}
+
+.bg-primary-container {
+    background: var(--color-primary-container);
+}
+
+.bg-primary-fixed {
+    background: var(--color-primary-fixed);
+}
+
+.bg-primary-fixed-dim {
+    background: var(--color-primary-fixed-dim);
+}
+
+/* =========================================================
+   SECONDARY
+========================================================= */
+
+.bg-secondary {
+    background: var(--color-secondary);
+    color: var(--color-on-secondary);
+}
+
+.bg-secondary-container {
+    background: var(--color-secondary-container);
+}
+
+.bg-secondary-fixed {
+    background: var(--color-secondary-fixed);
+}
+
+.bg-secondary-fixed-dim {
+    background: var(--color-secondary-fixed-dim);
+}
+
+/* =========================================================
+   TERTIARY
+========================================================= */
+
+.bg-tertiary {
+    background: var(--color-tertiary);
+    color: var(--color-on-tertiary);
+}
+
+.bg-tertiary-container {
+    background: var(--color-tertiary-container);
+}
+
+.bg-tertiary-fixed {
+    background: var(--color-tertiary-fixed);
+}
+
+.bg-tertiary-fixed-dim {
+    background: var(--color-tertiary-fixed-dim);
+}
+
+/* =========================================================
+   SURFACE
+========================================================= */
+
+.bg-background {
+    background: var(--color-background);
+}
+
+.bg-surface {
+    background: var(--color-surface);
+}
+
+.bg-surface-low {
+    background: var(--color-surface-low);
+}
+
+.bg-surface-container {
+    background: var(--color-surface-container);
+}
+
+.bg-surface-high {
+    background: var(--color-surface-high);
+}
+
+.bg-surface-highest {
+    background: var(--color-surface-highest);
+}
+
+/* =========================================================
+   TEXT / CONTENT SURFACE
+========================================================= */
+
+.bg-on-surface {
+    background: var(--color-on-surface);
+    color: var(--color-surface);
+}
+
+.bg-on-surface-variant {
+    background: var(--color-on-surface-variant);
+    color: var(--color-surface);
+}
+
+/* =========================================================
+   STATES
+========================================================= */
+
+.bg-success {
+    background: var(--color-success);
+    color: var(--color-on-success);
+}
+
+.bg-error {
+    background: var(--color-error);
+    color: var(--color-on-error);
+}
+
+.bg-warning {
+    background: var(--color-warning);
+    color: var(--color-on-warning);
+}
+
+.bg-info {
+    background: var(--color-info);
+    color: var(--color-on-info);
+}
+
+/* =========================================================
+   OUTLINE
+========================================================= */
+
+.bg-outline {
+    background: var(--color-outline);
+}
+
+.bg-outline-variant {
+    background: var(--color-outline-variant);
+}
+
+/* =========================================================
+   GRADIENTS
+========================================================= */
+
+.bg-gradient-primary {
+    background: var(--gradient-primary);
+}
+
+/* =========================================================
+   GENERIC
+========================================================= */
+
+.bg-transparent {
+    background: transparent;
+}
+
+.bg-white {
+    background: #ffffff;
+}
+
+.bg-black {
+    background: #000000;
+}
+
+/* =========================================================
+   BACKGROUND SIZE
+========================================================= */
+
+.bg-cover {
+    background-size: cover;
+}
+
+.bg-contain {
+    background-size: contain;
+}
+
+/* =========================================================
+   BACKGROUND POSITION
+========================================================= */
+
+.bg-center {
+    background-position: center;
+}
+
+.bg-top {
+    background-position: top;
+}
+
+.bg-bottom {
+    background-position: bottom;
+}
+
+.bg-left {
+    background-position: left;
+}
+
+.bg-right {
+    background-position: right;
+}
+
+/* =========================================================
+   BACKGROUND REPEAT
+========================================================= */
+
+.bg-no-repeat {
+    background-repeat: no-repeat;
+}
+
+.bg-repeat {
+    background-repeat: repeat;
+}
+
+/* =========================================================
+   BACKGROUND ATTACHMENT
+========================================================= */
+
+.bg-fixed {
+    background-attachment: fixed;
+}
+
+.bg-scroll {
+    background-attachment: scroll;
+}
