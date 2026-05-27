@@ -1,5 +1,7 @@
 import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import "@/assets/css/global.css";
+import "aos/dist/aos.css";
+import AOSProvider from "@/providers/AOSProvider";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
     variable: "--font-heading-sans",
@@ -99,10 +101,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html
-            lang="es"
-            className={`${plusJakartaSans.variable} ${manrope.variable}`}
-        >
+        <html lang="es" className={`${plusJakartaSans.variable} ${manrope.variable}`}>
             <body>
                 <script
                     type="application/ld+json"
@@ -162,7 +161,7 @@ export default function RootLayout({ children }) {
                         }),
                     }}
                 />
-
+                <AOSProvider/>
                 {children}
             </body>
         </html>

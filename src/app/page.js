@@ -31,7 +31,7 @@ export default function Page () {
                             ))}
                         </ul>
                     </nav>
-                    <Link href={'/'} className="btn btn-primary">Reservar ya!</Link>
+                    <Link href={'https://wa.me/51928889884/?text=Hola+deseo+realizar+una+reserva'} target="_blank" className="btn btn-primary">Reservar ya!</Link>
                 </div>
             </header>
 
@@ -39,7 +39,7 @@ export default function Page () {
 
                 <section className="relative w-full h lg:h" style={{"--h": "calc(100dvh - 60px)", "--h-lg": "calc(100dvh - 80px)"}}>
                     <div className="w-full h-full" style={{"backgroundColor": "rgba(0,0,0,.3)"}}>
-                        <div className="w m-auto h-full flex flex-col justify-center gap-xl xxl:w" style={{"--w": "90%", "--w-xxl": "80%"}}>
+                        <div className="w m-auto h-full flex flex-col justify-center gap-xl xxl:w" style={{"--w": "90%", "--w-xxl": "80%"}} data-aos="fade-up">
                             <h1 className="text-4xl font-bold text-white lg:text-6xl">
                                 <span className="block">{page.hero.tit1}</span>
                                 <span className="block">{page.hero.tit2}</span>
@@ -49,8 +49,8 @@ export default function Page () {
                                 <span className="block">{page.hero.txt2}</span>
                             </p>
                             <div className="flex gap-md">
-                                <Link href={'/'} className="btn btn-primary">{page.hero.cta}</Link>
-                                <Link href={'/'} className="btn btn-secondary">{page.hero.cti}</Link>
+                                <Link href={'https://wa.me/51928889884/?text=Hola+deseo+realizar+una+reserva'} target="_blank" className="btn btn-primary">{page.hero.cta}</Link>
+                                <Link href={'https://andarestoursworld.com/#destinations'} className="btn btn-secondary">{page.hero.cti}</Link>
                             </div>
                         </div>
                     </div>
@@ -60,12 +60,12 @@ export default function Page () {
                     </picture>
                 </section>
 
-                <section className="relative w-full py-5xl bg-white">
+                <section className="relative w-full py-5xl bg-white" id="about">
                     <div className="w m-auto flex flex-col gap-xl xxl:w lg:flex-row" style={{"--w": "90%", "--w-xxl": "80%"}}>
                         <div className="w-full">
-                            <div className="w-full h bg-surface rounded-md overflow-hidden" style={{"--h": "400px"}}></div>
+                            <div className="w-full h bg-surface rounded-md overflow-hidden" style={{"--h": "400px"}} data-aos="fade-right"></div>
                         </div>
-                        <div className="w-full flex flex-col gap-md">
+                        <div className="w-full flex flex-col gap-md" data-aos="fade-left">
                             <p className="text-secondary uppercase">Sobre nosotros</p>
                             <h2 className="text-4xl font-medium">Tu aliado experto en viajes de lujo y aventura</h2>
                             <p className="text-muted">En Andares Tours World, creemos que viajar es mucho más que desplazarse de un punto a otro. Es una oportunidad para conectar culturas, desafiar límites y crear recuerdos que perduran la vida.</p>
@@ -113,9 +113,9 @@ export default function Page () {
                     </div>
                 </section>
 
-                <section className="w-full py-5xl">
+                <section className="w-full py-5xl" id="services">
                     <div className="w m-auto flex flex-col gap-xl xxl:w" style={{"--w": "90%", "--w-xxl": "80%"}}>
-                        <div className="flex flex-col gap-sm">
+                        <div className="flex flex-col gap-sm" data-aos="fade-up">
                             <h2 className="text-2xl text-center lg:text-4xl">{page.services.tit}</h2>
                             <p className="text-center">{page.services.sub}</p>
                         </div>
@@ -127,9 +127,9 @@ export default function Page () {
                     </div>
                 </section>
 
-                <section className="w-full pt-5xl bg-white flex flex-col">
+                <section className="w-full pt-5xl bg-white flex flex-col" id="destinations">
                     <div className="w m-auto flex flex-col gap-xl xxl:w" style={{"--w": "90%", "--w-xxl": "80%"}}>
-                        <div className="flex flex-col gap-sm">
+                        <div className="flex flex-col gap-sm" data-aos="fade-up">
                             <h2 className="text-2xl text-center lg:text-4xl">{page.destinations.tit}</h2>
                             <p className="text-center">{page.destinations.sub}</p>
                         </div>
@@ -153,11 +153,13 @@ export default function Page () {
 
                 <section className="w-full py-5xl bg-white">
                     <div className="w m-auto flex flex-col gap-xl xxl:w" style={{"--w": "90%", "--w-xxl": "80%"}}>
-                        <h2 className="text-2xl text-center lg:text-4xl">{page.gallery.tit}</h2>
-                        <p className="text-center">{page.gallery.sub}</p>
+                        <div className="flex flex-col gap-sm" data-aos="fade-up">
+                            <h2 className="text-2xl text-center lg:text-4xl">{page.gallery.tit}</h2>
+                            <p className="text-center">{page.gallery.sub}</p>
+                        </div>
                         <ul className="w-full grid grid-1 gap-md lg:grid-3">
                             {page.gallery.images.map((img, i) => (
-                                <li key={i} className="w-full rounded-md overflow-hidden pointer">
+                                <li key={i} className="w-full rounded-md overflow-hidden pointer" data-aos="zoom-in">
                                     <img src={img.url} alt={`${img.alt}`} className="w-full h-full" />
                                 </li>
                             ))}
@@ -165,9 +167,9 @@ export default function Page () {
                     </div>
                 </section>
 
-                <section className="w-full py-5xl bg-surface">
+                <section className="w-full py-5xl bg-surface" id="contact">
                     <div className="w m-auto flex flex-col gap-5xl lg:flex-row xxl:w" style={{"--w": "90%", "--w-xxl": "80%"}}>
-                        <div className="w-full">
+                        <div className="w-full" data-aos="zoom-in-right">
                             <p className="text-secondary uppercase">CONTÁCTANOS</p>
                             <h2 className="text-2xl lg:text-4xl">¿Listo para empezar tu viaje?</h2>
                             <p className="text-muted my-lg">Estamos aquí para ayudarte a planificar cada detalle. Escríbenos y un asesor se pondrá en contacto a la brevedad.</p>
@@ -202,7 +204,7 @@ export default function Page () {
                                 </li>
                             </ul>
                         </div>
-                        <div className="w-full">
+                        <div className="w-full" data-aos="zoom-in-left">
                             <div className="flex flex-col gap-md bg-white rounded-md p-md lg:p-xl">
                                 <div className="w-full">
                                     <label className="block text-sm text-muted mb-sm" htmlFor="fullName">Nombre</label>
@@ -241,16 +243,16 @@ export default function Page () {
                 </section>
 
                 <section className="w-full py-5xl bg-white">
-                    <div className="w m-auto flex flex-col items-center text-center gap-md p-4xl rounded-md lg:w bg-gradient-primary" style={{"--w": "90%", "--w-lg": "60%"}}>
+                    <div className="w m-auto flex flex-col items-center text-center gap-md p-4xl rounded-md lg:w bg-gradient-primary" style={{"--w": "90%", "--w-lg": "60%"}} data-aos="fade-up">
                         <h2 className="text-white text-center text-5xl font-bold">Tu próxima aventura comienza hoy</h2>
                         <p className="text-white text-center">No dejes para mañana el viaje que puedes vivir hoy. Nuestros asesores expertos están listos para diseñar tu itenerario perfect.</p>
-                        <Link href={'/'} className="w-fit btn btn-secondary flex gap-md"><IconBrandWhatsapp/> Cotizar por Whatsapp</Link>
+                        <Link href={'https://wa.me/51928889884/?text=Hola+deseo+cotizar+un+tour'} target="_blank" className="w-fit btn btn-secondary flex gap-md"><IconBrandWhatsapp/> Cotizar por Whatsapp</Link>
                     </div>
                 </section>
 
                 <section className="w-full py-5xl">
-                    <div className="w m-auto flex flex-col gap-xl xxl:w" style={{"--w": "90%", "--w-xxl": "80%"}}>
-                        <div className="flex flex-col gap-sm">
+                    <div className="w m-auto flex flex-col gap-xl xxl:w" style={{"--w": "90%", "--w-xxl": "80%"}} data-aos="fade-up">
+                        <div className="flex flex-col gap-sm" data-aos="fade-up">
                             <h2 className="text-2xl text-center lg:text-4xl">{page.booking.tit}</h2>
                             <p className="text-center">{page.booking.sub}</p>
                         </div>
@@ -306,35 +308,35 @@ export default function Page () {
                             <p className="text-sm text-muted mb-sm">Conectamos viajeros apasionados con destinos extraordinarios.</p>
                             <p className="text-sm text-muted">Especialistas en crear memorias que duran para siempre.</p>
                             <ul className="flex gap-md flex-row my-md">
-                                <button className="w h center bg-surface rounded-full" style={{"--w": "40px", "--h": "40px"}}><IconBrandFacebook/></button>
-                                <button className="w h center bg-surface rounded-full" style={{"--w": "40px", "--h": "40px"}}><IconBrandTiktok/></button>
-                                <button className="w h center bg-surface rounded-full" style={{"--w": "40px", "--h": "40px"}}><IconBrandInstagram/></button>
-                                <button className="w h center bg-surface rounded-full" style={{"--w": "40px", "--h": "40px"}}><IconBrandX/></button>
+                                <Link href={'https://www.facebook.com/AndaresToursWorld'} target="_blank" className="w h center bg-surface rounded-full" style={{"--w": "40px", "--h": "40px"}}><IconBrandFacebook/></Link>
+                                <Link href={'https://www.tiktok.com/@andarestoursperu'} target="_blank" className="w h center bg-surface rounded-full" style={{"--w": "40px", "--h": "40px"}}><IconBrandTiktok/></Link>
+                                <Link href={'https://www.instagram.com/andarestoursperu'} target="_blank" className="w h center bg-surface rounded-full" style={{"--w": "40px", "--h": "40px"}}><IconBrandInstagram/></Link>
+                                <Link href={'https://www.x.com/Andarestoursvip'} target="_blank" className="w h center bg-surface rounded-full" style={{"--w": "40px", "--h": "40px"}}><IconBrandX/></Link>
                             </ul>
                         </div>
                         <div className="w-full">
                             <h4 className="font-bold text-primary text-lg mb-md">Enlaces rápidos</h4>
                             <ul className="w-full flex flex-col gap-md">
-                                <Link href={'/'} className="text-muted text-sm">Inicio</Link>
-                                <Link href={'/'} className="text-muted text-sm">Nosotros</Link>
-                                <Link href={'/'} className="text-muted text-sm">Nuestros Servicios</Link>
-                                <Link href={'/'} className="text-muted text-sm">Destinos TOP</Link>
-                                <Link href={'/'} className="text-muted text-sm">Políticas de privacidad</Link>
+                                <Link href={'https://andarestoursworld.com/'} className="text-muted text-sm">Inicio</Link>
+                                <Link href={'https://andarestoursworld.com/#about'} className="text-muted text-sm">Nosotros</Link>
+                                <Link href={'https://andarestoursworld.com/#services'} className="text-muted text-sm">Nuestros Servicios</Link>
+                                <Link href={'https://andarestoursworld.com/#destinations'} className="text-muted text-sm">Destinos TOP</Link>
+                                <Link href={'https://andarestoursworld.com/'} className="text-muted text-sm">Políticas de privacidad</Link>
                             </ul>
                         </div>
                         <div className="w-full">
                             <h4 className="font-bold text-primary text-lg mb-md">Contacto</h4>
                             <ul className="w-full flex flex-col gap-md">
-                                <Link href={'/'} className="flex items-center gap-sm text-sm"><IconMail/> reservas@andarestoursworld.com</Link>
-                                <Link href={'/'} className="flex items-center gap-sm text-sm"><IconPhone/> +51 987 654 321</Link>
-                                <Link href={'/'} className="flex items-center gap-sm text-sm"><IconMapPin/> Jr. Bolognesi 421 - Piso 2</Link>
+                                <Link href={'mailto:reservas@andarestoursworld.com?subject=Consulta%20de%20Reserva'} className="flex items-center gap-sm text-sm"><IconMail/> reservas@andarestoursworld.com</Link>
+                                <Link href={'tel:+51928889884'} className="flex items-center gap-sm text-sm"><IconPhone/> +51 928 889 884</Link>
+                                <Link href={'https://maps.app.goo.gl/fEn9YqivKqk1LXKo9'} target="_blank" className="flex items-center gap-sm text-sm"><IconMapPin/> Jr. Bolognesi 421 - Piso 2</Link>
                             </ul>
                         </div>
                         <div className="w-full">
                             <h4 className="font-bold text-primary text-lg mb-md">Newsletter</h4>
                             <p className="text-sm text-muted mb-md">Recibe ofertas exclusivas y guías de viaje directamente en tu correo.</p>
                             <div className="w-full flex flex-col gap-md">
-                                <input type="email" id="email" className="input" name="email" placeholder="Tu correo electrónico" />
+                                <input type="email" id="email" className="input rounded-md" name="email" placeholder="Tu correo electrónico" />
                                 <button className="w-full btn btn-primary">Subscribirme</button>
                             </div>
                         </div>
@@ -344,7 +346,7 @@ export default function Page () {
                         <ul className="flex flex-row items-center gap-sm">
                             <Link href={'/'} className="text-xs text-muted">Términos de servicio</Link>
                             <Link href={'/'} className="text-xs text-muted">Cookies</Link>
-                            <Link href={'/'} className="text-xs text-muted">Soporte</Link>
+                            <Link href={'https://wa.me/51966327426/?text=Tenemos+problemas+técnicos+en+la+página+Andares+Tours'} target="_blank" className="text-xs text-muted">Soporte</Link>
                         </ul>
                     </div>
                 </div>

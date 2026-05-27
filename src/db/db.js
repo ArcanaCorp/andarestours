@@ -4,23 +4,23 @@ export const page = {
     navs: [
         {
             txt: 'Inicio',
-            link: '/'
+            link: 'https://andarestoursworld.com'
         },
         {
             txt: 'Nosotros',
-            link: '/'
+            link: 'https://andarestoursworld.com/#about'
         },
         {
             txt: 'Servicios',
-            link: '/'
+            link: 'https://andarestoursworld.com/#services'
         },
         {
             txt: 'Destinos',
-            link: '/'
+            link: 'https://andarestoursworld.com/#destinations'
         },
         {
             txt: 'Contacto',
-            link: '/'
+            link: 'https://andarestoursworld.com/#contact'
         }
     ],
     hero: {
