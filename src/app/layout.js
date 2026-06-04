@@ -2,6 +2,7 @@ import { Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import "@/assets/css/global.css";
 import "aos/dist/aos.css";
 import AOSProvider from "@/providers/AOSProvider";
+import { AnalyticsProvider } from "@/providers/AnalyticsProvider";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
     variable: "--font-heading-sans",
@@ -162,7 +163,9 @@ export default function RootLayout({ children }) {
                     }}
                 />
                 <AOSProvider/>
-                {children}
+                <AnalyticsProvider>
+                    {children}
+                </AnalyticsProvider>
             </body>
         </html>
     );

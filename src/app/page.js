@@ -1,39 +1,42 @@
 'use client';
 
+import Booking from "@/components/Booking";
 import CardImage from "@/components/CardImage";
 import CardService from "@/components/CardService";
+import Contact from "@/components/Contact";
 import { page } from "@/db/db";
-import { IconBed, IconBrandFacebook, IconBrandInstagram, IconBrandSafari, IconBrandTiktok, IconBrandWhatsapp, IconBrandX, IconCar, IconCarGarage, IconChevronRight, IconClock, IconMail, IconMapPin, IconPhone, IconPlane, IconSearch, IconShare, IconStarFilled } from "@tabler/icons-react";
+import Footer from "@/layout/footer";
+import Header from "@/layout/header";
+import { getAgency } from "@/services/agency.service";
+import { IconBrandWhatsapp, IconMail, IconMapPin, IconPhone } from "@tabler/icons-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Page () {
 
-    const pathname = usePathname();
+    const [ agency, setAgency ] = useState(null);
 
-    const year = new Date().getFullYear();
+    useEffect(() => {
+        const getInfo = async () => {
+            try {
+                if (!agency) {
+                    const data = await getAgency();
+                    setAgency(data)
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        getInfo();
+    }, [])
+
+    console.log(agency);
 
     return (
 
         <>
         
-            <header className="sticky inset w-full h lg:h bg-white" style={{"--h": "60px", "--h-lg": "80px", "zIndex": "1001"}}>
-                <div className="w flex items-center justify-between h-full m-auto xxl:w" style={{"--w": "90%", "--w-xxl": "80%"}}>
-                    <Link href={'/'} className="block h lg:h" style={{"--h": "46px", "--h-lg": "66px"}}>
-                        <img src="./LOGO - ANDARESv2.png" alt="Logo de ANDARES" width={100} height={100} />
-                    </Link>
-                    <nav className="none lg:block">
-                        <ul className="flex items-center gap-md">
-                            {page.navs.map((nav, i) => (
-                                <li key={i}>
-                                    <Link href={nav.link} className={`block py-xs px-md text-sm ${pathname === nav.link ? 'font-medium text-secondary' : ''}`}>{nav.txt}</Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </nav>
-                    <Link href={'https://wa.me/51928889884/?text=Hola+deseo+realizar+una+reserva'} target="_blank" className="btn btn-primary">Reservar ya!</Link>
-                </div>
-            </header>
+            <Header/>
 
             <main className="w-full">
 
@@ -63,7 +66,9 @@ export default function Page () {
                 <section className="relative w-full py-5xl bg-white" id="about">
                     <div className="w m-auto flex flex-col gap-xl xxl:w lg:flex-row" style={{"--w": "90%", "--w-xxl": "80%"}}>
                         <div className="w-full">
-                            <div className="w-full h bg-surface rounded-md overflow-hidden" style={{"--h": "400px"}} data-aos="fade-right"></div>
+                            <div className="w-full h bg-surface rounded-md overflow-hidden" style={{"--h": "400px"}} data-aos="fade-right">
+                                <img src="/banner-3.jpg" alt="" className="w-full h-full object-cover" />
+                            </div>
                         </div>
                         <div className="w-full flex flex-col gap-md" data-aos="fade-left">
                             <p className="text-secondary uppercase">Sobre nosotros</p>
@@ -80,7 +85,7 @@ export default function Page () {
                                 </div>
                             </div>
                             <div className="flex items-center gap-md">
-                                <div className="flex">
+                                <div className="flex none">
                                     <div className="w h bg-white center rounded-full" style={{"--w": "50px", "--h": "50px"}}>
                                         <div className="w h bg-surface rounded-full" style={{"--w": "40px", "--h": "40px"}}>
                                             <img src={`https://ui-avatars.com/api/?name=John+Doe&background=FF00FF`} />
@@ -178,66 +183,34 @@ export default function Page () {
                                     <span className="w h center rounded-full bg-white text-secondary" style={{"--w": "50px", "--h": "50px"}}><IconMapPin/></span>
                                     <p>
                                         <span className="block text-primary font-bold">Dirección</span>
-                                        <span className="text-sm">{page.contact.location}</span>
+                                        <span className="text-sm">{agency?.direction}</span>
                                     </p>
                                 </li>
                                 <li className="w-full flex gap-md items-center">
                                     <span className="w h center rounded-full bg-white text-secondary" style={{"--w": "50px", "--h": "50px"}}><IconPhone/></span>
                                     <p>
                                         <span className="block text-primary font-bold">Llámanos</span>
-                                        <span className="text-sm">{page.contact.phone}</span>
+                                        <span className="text-sm">{agency?.phone}</span>
                                     </p>
                                 </li>
                                 <li className="w-full flex gap-md items-center">
                                     <span className="w h center rounded-full bg-white text-secondary" style={{"--w": "50px", "--h": "50px"}}><IconBrandWhatsapp/></span>
                                     <p>
                                         <span className="block text-primary font-bold">Escríbenos</span>
-                                        <span className="text-sm">{page.contact.phone}</span>
+                                        <span className="text-sm">{agency?.whatsapp || agency?.phone}</span>
                                     </p>
                                 </li>
                                 <li className="w-full flex gap-md items-center">
                                     <span className="w h center rounded-full bg-white text-secondary" style={{"--w": "50px", "--h": "50px"}}><IconMail/></span>
                                     <p>
                                         <span className="block text-primary font-bold">Email</span>
-                                        <span className="text-sm">{page.contact.email}</span>
+                                        <span className="text-sm">{agency?.email}</span>
                                     </p>
                                 </li>
                             </ul>
                         </div>
                         <div className="w-full" data-aos="zoom-in-left">
-                            <div className="flex flex-col gap-md bg-white rounded-md p-md lg:p-xl">
-                                <div className="w-full">
-                                    <label className="block text-sm text-muted mb-sm" htmlFor="fullName">Nombre</label>
-                                    <input type="text" name="fullName" id="fullName" className="input rounded-md" placeholder="Tu nombre" />
-                                </div>
-                                <div className="w-full flex flex-col gap-md lg:flex-row">
-                                    <div className="w-full">
-                                        <label className="block text-sm text-muted mb-sm" htmlFor="email">Correo Electrónico</label>
-                                        <input type="text" name="email" id="email" className="input rounded-md" placeholder="Tu correo" />
-                                    </div>
-                                    <div className="w-full">
-                                        <label className="block text-sm text-muted mb-sm" htmlFor="phone">Número de Whatsapp</label>
-                                        <input type="text" name="phone" id="phone" className="input rounded-md" placeholder="Tu número" />
-                                    </div>
-                                </div>
-                                <div className="w-full">
-                                    <label className="block text-sm text-muted mb-sm" htmlFor="pack">Paquete de ínteres</label>
-                                    <select name="pack" id="pack" className="input rounded-md">
-                                        <option>Canchayllo</option>
-                                        <option>Canchayllo</option>
-                                        <option>Canchayllo</option>
-                                        <option>Canchayllo</option>
-                                        <option>Canchayllo</option>
-                                    </select>
-                                </div>
-                                <div className="w-full">
-                                    <label className="block text-sm text-muted mb-sm" htmlFor="msg">¿En qué podemos ayudarte?</label>
-                                    <textarea name="msg" id="msg" className="textarea rounded-md" placeholder="Cuéntanos tus planes de viaje..." />
-                                </div>
-                                <div className="w-full">
-                                    <button className="w-full btn btn-primary">Enviar mensaje</button>
-                                </div>
-                            </div>
+                            <Contact agency={agency} />
                         </div>
                     </div>
                 </section>
@@ -246,7 +219,7 @@ export default function Page () {
                     <div className="w m-auto flex flex-col items-center text-center gap-md p-4xl rounded-md lg:w bg-gradient-primary" style={{"--w": "90%", "--w-lg": "60%"}} data-aos="fade-up">
                         <h2 className="text-white text-center text-5xl font-bold">Tu próxima aventura comienza hoy</h2>
                         <p className="text-white text-center">No dejes para mañana el viaje que puedes vivir hoy. Nuestros asesores expertos están listos para diseñar tu itenerario perfect.</p>
-                        <Link href={'https://wa.me/51928889884/?text=Hola+deseo+cotizar+un+tour'} target="_blank" className="w-fit btn btn-secondary flex gap-md"><IconBrandWhatsapp/> Cotizar por Whatsapp</Link>
+                        <Link href={`https://wa.me/51${agency?.whatsapp || agency?.phone}/?text=Hola+deseo+cotizar+un+tour`} target="_blank" className="w-fit btn btn-secondary flex gap-md"><IconBrandWhatsapp/> Cotizar por Whatsapp</Link>
                     </div>
                 </section>
 
@@ -256,101 +229,13 @@ export default function Page () {
                             <h2 className="text-2xl text-center lg:text-4xl">{page.booking.tit}</h2>
                             <p className="text-center">{page.booking.sub}</p>
                         </div>
-                        <div className="w flex flex-col gap-md bg-white p-3xl rounded-md lg:w m-auto" style={{"--w": "100%", "--w-lg": "60%"}}>
-                            <div className="w-full flex gap-md">
-                                <div className="w-full">
-                                    <label className="block text-sm text-muted mb-sm" htmlFor="nameBooking">Nombres completos</label>
-                                    <input type="text" name="nameBooking" id="nameBooking" className="input rounded-md" placeholder="Juan Pérez Hilario" />
-                                </div>
-                                <div className="w-full">
-                                    <label className="block text-sm text-muted mb-sm" htmlFor="phoneBooking">Número de WhatsApp</label>
-                                    <input type="text" name="phoneBooking" id="phoneBooking" className="input rounded-md" placeholder="+51 995 998 996" />
-                                </div>
-                            </div>
-                            <div className="w-full flex gap-md">
-                                <div className="w-full">
-                                    <label className="block text-sm text-muted mb-sm" htmlFor="placeBooking">¿A dónde vas?</label>
-                                    <select name="placeBooking" id="placeBooking" className="input rounded-md">
-                                        <option>Canchayllo</option>
-                                    </select>
-                                </div>
-                                <div className="w-full">
-                                    <label className="block text-sm text-muted mb-sm" htmlFor="dateBooking">Fecha de viaje</label>
-                                    <input type="date" name="dateBooking" id="dateBooking" className="input rounded-md" placeholder="Juan Pérez Hilario" />
-                                </div>
-                            </div>
-                            <div className="w-full">
-                                <label className="block text-sm text-muted mb-sm" htmlFor="personBooking">Número de viajeros</label>
-                                <select name="personBooking" id="personBooking" className="input rounded-md">
-                                    <option>1 viajero</option>
-                                    <option>2 viajeros</option>
-                                    <option>3-5 viajeros</option>
-                                    <option>Grupo (+5)</option>
-                                </select>
-                            </div>
-                            <div className="w-full">
-                                <button className="btn btn-primary">Solicitar reserva</button>
-                            </div>
-                            <div className="w-full">
-                                <p className="text-xs text-muted">* Al enviar este formulario, aceptas nuestras <Link href={'/'} className="text-secondary font-medium">políticas de privacidad</Link> y <Link href={'/'} className="text-secondary font-medium">términos de servicio</Link>.</p>
-                            </div>
-                        </div>
+                        <Booking agency={agency} />
                     </div>
                 </section>
 
             </main>
 
-            <footer className="w-full bg-white py-5xl">
-                <div className="w m-auto xxl:w" style={{"--w": "90%", "--w-xxl": "80%"}}>
-                    <div className="w-full grid grid-1 lg:grid-4 gap-5xl">
-                        <div className="w-full">
-                            <img src="./LOGO - ANDARESv2.png" className="w mb-md" style={{"--w": "60%"}} alt="Logo de ANDARES TOURS" />
-                            <p className="text-sm text-muted mb-sm">Conectamos viajeros apasionados con destinos extraordinarios.</p>
-                            <p className="text-sm text-muted">Especialistas en crear memorias que duran para siempre.</p>
-                            <ul className="flex gap-md flex-row my-md">
-                                <Link href={'https://www.facebook.com/AndaresToursWorld'} target="_blank" className="w h center bg-surface rounded-full" style={{"--w": "40px", "--h": "40px"}}><IconBrandFacebook/></Link>
-                                <Link href={'https://www.tiktok.com/@andarestoursperu'} target="_blank" className="w h center bg-surface rounded-full" style={{"--w": "40px", "--h": "40px"}}><IconBrandTiktok/></Link>
-                                <Link href={'https://www.instagram.com/andarestoursperu'} target="_blank" className="w h center bg-surface rounded-full" style={{"--w": "40px", "--h": "40px"}}><IconBrandInstagram/></Link>
-                                <Link href={'https://www.x.com/Andarestoursvip'} target="_blank" className="w h center bg-surface rounded-full" style={{"--w": "40px", "--h": "40px"}}><IconBrandX/></Link>
-                            </ul>
-                        </div>
-                        <div className="w-full">
-                            <h4 className="font-bold text-primary text-lg mb-md">Enlaces rápidos</h4>
-                            <ul className="w-full flex flex-col gap-md">
-                                <Link href={'https://andarestoursworld.com/'} className="text-muted text-sm">Inicio</Link>
-                                <Link href={'https://andarestoursworld.com/#about'} className="text-muted text-sm">Nosotros</Link>
-                                <Link href={'https://andarestoursworld.com/#services'} className="text-muted text-sm">Nuestros Servicios</Link>
-                                <Link href={'https://andarestoursworld.com/#destinations'} className="text-muted text-sm">Destinos TOP</Link>
-                                <Link href={'https://andarestoursworld.com/'} className="text-muted text-sm">Políticas de privacidad</Link>
-                            </ul>
-                        </div>
-                        <div className="w-full">
-                            <h4 className="font-bold text-primary text-lg mb-md">Contacto</h4>
-                            <ul className="w-full flex flex-col gap-md">
-                                <Link href={'mailto:reservas@andarestoursworld.com?subject=Consulta%20de%20Reserva'} className="flex items-center gap-sm text-sm"><IconMail/> reservas@andarestoursworld.com</Link>
-                                <Link href={'tel:+51928889884'} className="flex items-center gap-sm text-sm"><IconPhone/> +51 928 889 884</Link>
-                                <Link href={'https://maps.app.goo.gl/fEn9YqivKqk1LXKo9'} target="_blank" className="flex items-center gap-sm text-sm"><IconMapPin/> Jr. Bolognesi 421 - Piso 2</Link>
-                            </ul>
-                        </div>
-                        <div className="w-full">
-                            <h4 className="font-bold text-primary text-lg mb-md">Newsletter</h4>
-                            <p className="text-sm text-muted mb-md">Recibe ofertas exclusivas y guías de viaje directamente en tu correo.</p>
-                            <div className="w-full flex flex-col gap-md">
-                                <input type="email" id="email" className="input rounded-md" name="email" placeholder="Tu correo electrónico" />
-                                <button className="w-full btn btn-primary">Subscribirme</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="w-full flex flex-col items-center justify-between lg:flex-row">
-                        <p className="text-xs text-muted">© {year} Andares Tours todos los derechos reservados</p>
-                        <ul className="flex flex-row items-center gap-sm">
-                            <Link href={'/'} className="text-xs text-muted">Términos de servicio</Link>
-                            <Link href={'/'} className="text-xs text-muted">Cookies</Link>
-                            <Link href={'https://wa.me/51966327426/?text=Tenemos+problemas+técnicos+en+la+página+Andares+Tours'} target="_blank" className="text-xs text-muted">Soporte</Link>
-                        </ul>
-                    </div>
-                </div>
-            </footer>
+            <Footer agency={agency} />
         
         </>
 

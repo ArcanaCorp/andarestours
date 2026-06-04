@@ -39,31 +39,31 @@ export const page = {
                 ico: <IconPlane/>,
                 tit: 'Tickets Aéreos',
                 txt: 'Las mejores tarifas nacionales e internacionales.',
-                link: '/'
+                link: 'https://wa.me/51928889884/?text=Deseo+más+información+sobre+Tickets+aéreos'
             },
             {
                 ico: <IconCar/>,
                 tit: 'Traslados',
                 txt: 'Transporte seguro del aeropuerto a tu hotel.',
-                link: '/'
+                link: 'https://wa.me/51928889884/?text=Deseo+más+información+sobre+Traslados'
             },
             {
                 ico: <IconBrandSafari/>,
                 tit: 'Tours Operador',
                 txt: 'Guías expertos y rutas exclusivas por el mundo.',
-                link: '/'
+                link: 'https://wa.me/51928889884/?text=Deseo+más+información+sobre+Tours+operados'
             },
             {
                 ico: <IconBed/>,
                 tit: 'Hoteles',
                 txt: 'Reserva en los mejores y cómodos hoteles.',
-                link: '/'
+                link: 'https://wa.me/51928889884/?text=Deseo+más+información+sobre+Hoteles'
             },
             {
                 ico: <IconCarGarage/>,
                 tit: 'Alquiler de movilidad',
                 txt: 'Libertad total para explorar a tu propio ritmo.',
-                link: '/'
+                link: 'https://wa.me/51928889884/?text=Deseo+más+información+sobre+el+Alquiler+de+movilidad'
             }
         ]
     },
@@ -76,7 +76,7 @@ export const page = {
                 name: 'Cañon del Shutjo',
                 time: '4 días / 3 noches',
                 price: 60,
-                link: '',
+                link: 'https://wa.me/51928889884/?text=Deseo+reservar+el+Cañon+del+Shutjo',
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Entrada_del_Ca%C3%B1%C3%B3n_de_Shucto.jpg/1280px-Entrada_del_Ca%C3%B1%C3%B3n_de_Shucto.jpg'
             },
             {
@@ -84,7 +84,7 @@ export const page = {
                 name: 'Cañon del Shutjo',
                 time: '4 días / 3 noches',
                 price: 60,
-                link: '',
+                link: 'https://wa.me/51928889884/?text=Deseo+reservar+el+Cañon+del+Shutjo',
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Entrada_del_Ca%C3%B1%C3%B3n_de_Shucto.jpg/1280px-Entrada_del_Ca%C3%B1%C3%B3n_de_Shucto.jpg'
             },
             {
@@ -92,7 +92,7 @@ export const page = {
                 name: 'Cañon del Shutjo',
                 time: '4 días / 3 noches',
                 price: 60,
-                link: '',
+                link: 'https://wa.me/51928889884/?text=Deseo+reservar+el+Cañon+del+Shutjo',
                 image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Entrada_del_Ca%C3%B1%C3%B3n_de_Shucto.jpg/1280px-Entrada_del_Ca%C3%B1%C3%B3n_de_Shucto.jpg'
             }
         ],

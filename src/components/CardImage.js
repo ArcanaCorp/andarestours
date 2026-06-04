@@ -1,6 +1,9 @@
 import { IconClock, IconStarFilled } from "@tabler/icons-react";
 
 export default function CardImage ({ d }) {
+
+    const handleLink = (link) => window.open(link)
+
     return (
         <li className="w-full h rounded-md overflow-hidden pointer" style={{"--h": "450px", "backgroundImage": `url(${d.image})`, "backgroundPosition": "center", "backgroundSize": "cover"}} data-aos="flip-left">
             <div className="relative w-full h-full p-lg flex flex-col justify-between" style={{"backgroundColor": "rgba(0,0,0,.5)"}}>
@@ -12,7 +15,7 @@ export default function CardImage ({ d }) {
                         <span className="flex items-center gap-xs text-sm"><IconClock size={16}/> {d.time}</span>
                         <span className="text-xl font-bold">S/{(d.price).toFixed(2)}</span>
                     </p>
-                    <button className="w-full btn btn-secondary">Reservar ahora</button>
+                    <button className="w-full btn btn-secondary" onClick={() => handleLink(d.link)}>Reservar ahora</button>
                 </div>
             </div>
             <img className="absolute inset w-full h-full" style={{"zIndex": "-1"}} src={d.image} width={100} height={100} alt={`${d.name} - Andares Tours`} />
