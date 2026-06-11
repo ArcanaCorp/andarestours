@@ -8,7 +8,10 @@ export const getAgency = async () => {
             .select(`
                 *,
                 packages(
-                    *
+                    *,
+                    package_images (
+                        *
+                    )
                 )
             `)
             .eq('id', PAGE_KEY)

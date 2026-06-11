@@ -7,30 +7,13 @@ import Contact from "@/components/Contact";
 import { page } from "@/db/db";
 import Footer from "@/layout/footer";
 import Header from "@/layout/header";
-import { getAgency } from "@/services/agency.service";
+import { useData } from "@/providers/DataProvider";
 import { IconBrandWhatsapp, IconMail, IconMapPin, IconPhone } from "@tabler/icons-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function Page () {
 
-    const [ agency, setAgency ] = useState(null);
-
-    useEffect(() => {
-        const getInfo = async () => {
-            try {
-                if (!agency) {
-                    const data = await getAgency();
-                    setAgency(data)
-                }
-            } catch (error) {
-                console.error(error);
-            }
-        }
-        getInfo();
-    }, [])
-
-    console.log(agency);
+    const { agency } = useData();
 
     return (
 
@@ -139,9 +122,11 @@ export default function Page () {
                             <p className="text-center">{page.destinations.sub}</p>
                         </div>
                         <ul className="grid grid-1 gap-md mb-2xl md:grid-2 lg:grid-3 xxl:grid-4">
-                            {page.destinations.items.map((d, i) => (
-                                <CardImage key={i} d={d} />
-                            ))}
+                            {agency?.packages.length > 0 && (
+                                agency?.packages.map((pck) => (
+                                    <CardImage key={pck.id} d={pck} />
+                                ))
+                            )}
                         </ul>
                     </div>
                     <div className="w-full bg-primary">
@@ -163,11 +148,13 @@ export default function Page () {
                             <p className="text-center">{page.gallery.sub}</p>
                         </div>
                         <ul className="w-full grid grid-1 gap-md lg:grid-3">
-                            {page.gallery.images.map((img, i) => (
-                                <li key={i} className="w-full rounded-md overflow-hidden pointer" data-aos="zoom-in">
-                                    <img src={img.url} alt={`${img.alt}`} className="w-full h-full" />
-                                </li>
-                            ))}
+                            {agency?.packages.length > 0 && (
+                                agency?.packages?.flatMap(pack => pack.package_images?.map((image, index) => (
+                                    <li key={`${pack.id}-${index}`} className="w-full rounded-md overflow-hidden pointer" data-aos="zoom-in">
+                                        <img src={image.image_url} alt={`${pack.name}`} className="w-full h-full" />
+                                    </li>
+                                )))
+                            )}
                         </ul>
                     </div>
                 </section>
