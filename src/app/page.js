@@ -15,6 +15,8 @@ export default function Page () {
 
     const { agency } = useData();
 
+    console.log(agency);
+
     return (
 
         <>
@@ -149,9 +151,9 @@ export default function Page () {
                         </div>
                         <ul className="w-full grid grid-1 gap-md lg:grid-3">
                             {agency?.packages.length > 0 && (
-                                agency?.packages?.flatMap(pack => pack.package_images?.map((image, index) => (
+                                agency?.packages?.flatMap(pack => pack.gallery_images?.map((image, index) => (
                                     <li key={`${pack.id}-${index}`} className="w-full rounded-md overflow-hidden pointer" data-aos="zoom-in">
-                                        <img src={image.image_url} alt={`${pack.name}`} className="w-full h-full" />
+                                        <img src={image} alt={`${pack.name}`} className="w-full h-full" />
                                     </li>
                                 )))
                             )}

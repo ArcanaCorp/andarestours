@@ -5,8 +5,6 @@ export default function CardImage ({ d }) {
 
     const { agency } = useData();
 
-    const cover = d.package_images.find((img) => img.cover === true);
-
     const handleBooking = (book) => {
         const message = `Hola *Andares Tours*\nQuiero realizar una reserva del paquete *${book.name}*`
         const link = `https://wa.me/${agency?.whatsapp}/?text=${encodeURIComponent(message)}`;
@@ -14,7 +12,7 @@ export default function CardImage ({ d }) {
     }
 
     return (
-        <li className="w-full h rounded-md overflow-hidden pointer" style={{"--h": "450px", "backgroundImage": `url(${cover.image_url})`, "backgroundPosition": "center", "backgroundSize": "cover"}} data-aos="flip-left">
+        <li className="w-full h rounded-md overflow-hidden pointer" style={{"--h": "450px", "backgroundImage": `url(${d.cover_image})`, "backgroundPosition": "center", "backgroundSize": "cover"}} data-aos="flip-left">
             <div className="relative w-full h-full p-lg flex flex-col justify-between" style={{"backgroundColor": "rgba(0,0,0,.5)"}}>
                 <span className="flex items-center justify-end gap-xs rounded-full bg-white text-xs p-md" style={{"width": "fit-content"}}><IconStarFilled size={16} color="#ffb020"/> 4.9</span>
                 <div className="text-white">
@@ -27,7 +25,7 @@ export default function CardImage ({ d }) {
                     <button className="w-full btn btn-secondary" onClick={() => handleBooking(d)}>Reservar ahora</button>
                 </div>
             </div>
-            <img className="absolute inset w-full h-full" style={{"zIndex": "-1"}} src={cover.image_url} width={100} height={100} alt={`${d.name} - Andares Tours`} />
+            <img className="absolute inset w-full h-full" style={{"zIndex": "-1"}} src={d.cover_image} width={100} height={100} alt={`${d.name} - Andares Tours`} />
         </li>
     )
 }
